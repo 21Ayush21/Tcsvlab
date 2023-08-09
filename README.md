@@ -1,2 +1,2 @@
 # Tcsvlab
-Automaton Simulator
+Automaton Simulator as a college project
