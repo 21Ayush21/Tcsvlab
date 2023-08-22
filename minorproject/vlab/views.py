@@ -15,3 +15,7 @@ class login(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('hello')
+    
+@login_required
+def home(request):
+    return render(request , 'vlab/Theory.html')
