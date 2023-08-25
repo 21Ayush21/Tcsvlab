@@ -1,7 +1,8 @@
 from django.shortcuts import render , redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required 
+from django.contrib.auth import logout
 
 
 @login_required
@@ -17,5 +18,9 @@ class login(LoginView):
         return reverse_lazy('hello')
     
 @login_required
-def home(request):
+def Theory(request):
     return render(request , 'vlab/Theory.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('login/')
