@@ -20,7 +20,3 @@ class login(LoginView):
 @login_required
 def Theory(request):
     return render(request , 'vlab/Theory.html')
-
-def logout_user(request):
-    logout(request)
-    return redirect('login/')
