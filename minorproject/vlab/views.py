@@ -6,7 +6,7 @@ from django.contrib.auth import logout
 
 
 @login_required
-def hello(request):
+def home(request):
     return render(request , 'vlab/main.html')
 
 class login(LoginView):
@@ -15,7 +15,7 @@ class login(LoginView):
     redirect_authenticated_user = True
 
     def get_success_url(self):
-        return reverse_lazy('hello')
+        return reverse_lazy('home')
     
 @login_required
 def Theory(request):
