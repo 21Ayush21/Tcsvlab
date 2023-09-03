@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import logout
+from .forms import Signup
 
 
 @login_required
@@ -20,3 +21,10 @@ class login(LoginView):
 @login_required
 def Theory(request):
     return render(request , 'vlab/Theory.html')
+
+def register(request):
+    form = Signup()
+    if request.method == 'POST':
+        print(request.POST)
+    context = {'form' : form}
+    return render(request ,'vlab/register.html' , context)
