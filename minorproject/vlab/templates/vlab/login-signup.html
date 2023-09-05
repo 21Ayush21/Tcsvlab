@@ -16,7 +16,7 @@
         
     </div>
     <form method="POST">
-        <h3>Login Here</h3>
+        <h3>SIGNUP</h3>
         {% csrf_token %}
 
         <label for="username">Username</label>
@@ -26,6 +26,7 @@
         <input type="password" placeholder="Password" id="password" name = 'password'>
 
         <button>Log In</button>
+        <p>Don't have an account? <a href="{% url 'register'%}">Signup</a></p>
         
     </form>
 </body>
