@@ -1,4 +1,4 @@
-minorproject/db.sqlite3
+*.sqlite3
 *.pyc
 *.log
 *.pot
