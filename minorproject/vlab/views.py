@@ -39,4 +39,4 @@ def LoginPage(request):
             login(request , user)
             return redirect('home')
      
-    return render(request , 'vlab/login-signup.html' )
+    return render(request , 'vlab/login.html' )
