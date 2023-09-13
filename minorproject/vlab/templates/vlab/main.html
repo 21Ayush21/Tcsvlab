@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
 </head>
 
-{{request.user}}
+{{request.user.email}}
 <body>
 
     {% block content %}
