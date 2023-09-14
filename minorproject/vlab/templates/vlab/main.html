@@ -10,11 +10,12 @@
 </head>
 
 {{request.user.email}}
+
+{% include 'vlab/navbar.html' %}
 <body>
 
     {% block content %}
     <h1>Home</h1>
-    <a href="{% url 'Theory'%}"> Theory</a>
     <a href="{% url 'logout'%}"> Logout</a>
     {% endblock content %}
     

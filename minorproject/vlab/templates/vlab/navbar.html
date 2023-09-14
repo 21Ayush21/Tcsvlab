@@ -1,24 +1,26 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>"Website Title"</title>
-  <link rel="stylesheet" href="navbar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type='text/css' href="{% static '/css/navbar.css' %}">
 </head>
 
+<header>
+    <div class="navbar">
+        <ul class="links">
+            <li><a href="{% url 'home'%}">Home</a></li>
+            <li><a href="{% url 'Theory'%}">Theory</a></li>
+            <li><a href="">Simulator</a></li>
+            <li><a href="">Examples</a></li>
+            <li><a href="{% url 'logout'%}"> Logout</a></li>
+        </ul>
+    </div>
+</header>
 <body>
-  <div class="container">
-    <p>Insertlogohere</p>
-
-    <li><a href="./html-table.html">Home</a></li>
-    <li><a href="./inline-block.html">Theory</a></li>
-    <li><a href="./absolute-position.html">Example</a></li>
-    <li><a href="./float.html">Simulator</a></li>
     
-
-  </div>
 </body>
-
 </html>
