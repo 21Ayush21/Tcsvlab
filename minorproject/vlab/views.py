@@ -40,3 +40,9 @@ def LoginPage(request):
             return redirect('home')
      
     return render(request , 'vlab/login.html' )
+
+def Simulator(request):
+    return render(request , 'vlab/Simulator.html')
+
+def Examples(request):
+    return render(request , 'vlab/Examples.html')
