@@ -46,3 +46,6 @@ def Simulator(request):
 
 def Examples(request):
     return render(request , 'vlab/experiments.html')
+
+def experiment1(request):
+    return render(request , 'vlab/experiment1.html')

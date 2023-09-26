@@ -1,0 +1,38 @@
+.fsm_eximg{
+    width: 600px;
+    height: auto;
+}
+.fsm_statesimg{
+    width: 300px;
+    height: auto;
+}
+.fsm_evalimg{
+    width: 300px;
+    height: 150px;
+}
+.sim_ioimg{
+    width: 600px;
+    height: 400px;
+}
+.sim_legendimg{
+    width: 600px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+.para_img{
+width: 350px;
+height: 120px;
+border: 2px solid black;
+}
+
+.para p{
+padding: 3px;
+}
+
+.para {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
