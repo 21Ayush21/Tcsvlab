@@ -45,4 +45,4 @@ def Simulator(request):
     return render(request , 'vlab/Simulator.html')
 
 def Examples(request):
-    return render(request , 'vlab/Examples.html')
+    return render(request , 'vlab/experiments.html')

@@ -1,6 +1,11 @@
+header{
+  margin: 0;
+}
+
 .navbar{
   background-color: #ae2929;
   width: 100%;
+  border-radius: 10px;
 }
 
 .navbar li{
