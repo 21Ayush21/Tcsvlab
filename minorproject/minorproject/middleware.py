@@ -6,11 +6,7 @@ class SimulatorMiddleware:
         response = self.get_response(request)
         response.setdefault(
             "Cross-Origin-Embedder-Policy",
-            "credentialless",
-        )
-        response.setdefault(
-            "Referrer-Policy",
-            "no-referrer-when-downgrades",
+            "require-corp",
         )
 
         return response
