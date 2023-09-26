@@ -78,7 +78,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "allauth.account.middleware.AccountMiddleware",
-    'minorproject.middleware.EmbedderMiddleware',
+    'minorproject.middleware.SimulatorMiddleware',
 ]
 
 ROOT_URLCONF = 'minorproject.urls'
