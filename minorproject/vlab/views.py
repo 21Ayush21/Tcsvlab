@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import logout , authenticate , login
 from .forms import Signup 
+from .decorator import unauthenticated_user
 
 
 @login_required
@@ -16,6 +17,7 @@ def home(request):
 def Theory(request):
     return render(request , 'vlab/Theory.html')
 
+@unauthenticated_user
 def register(request):
 
     form = Signup()
@@ -28,6 +30,7 @@ def register(request):
     
     return render(request ,'vlab/register.html' , {'form' : form})
 
+@unauthenticated_user
 def LoginPage(request):
 
     if request.method == 'POST':
@@ -41,6 +44,7 @@ def LoginPage(request):
      
     return render(request , 'vlab/login.html' )
 
+@login_required(login_url='login')
 def Simulator(request):
     return render(request , 'vlab/Simulator.html')
 
