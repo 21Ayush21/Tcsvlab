@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import logout , authenticate , login
 from .forms import Signup 
+from django.contrib import messages
 from .decorator import unauthenticated_user
 
 
@@ -17,7 +18,7 @@ def home(request):
 def Theory(request):
     return render(request , 'vlab/Theory.html')
 
-@unauthenticated_user
+
 def register(request):
 
     form = Signup()
@@ -26,6 +27,7 @@ def register(request):
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
+            messages.success(request, 'Account was created successfully for ' + user)
             return redirect('login')
     
     return render(request ,'vlab/register.html' , {'form' : form})
@@ -41,6 +43,8 @@ def LoginPage(request):
         if user is not None:
             login(request , user)
             return redirect('home')
+        else:
+            messages.info(request,"Invalid Username or Password")
      
     return render(request , 'vlab/login.html' )
 
