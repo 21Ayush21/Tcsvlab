@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 1 - Virtual Lab</title>
+    <link rel="stylesheet" href="/minorproject/static/css/1.css"> 
+</head>
+<body>
+
+    <header>
+        <h1>Virtual Lab</h1>
+    </header>
+    
+    <nav>
+        <a href="exp.html">Home</a>
+        <a href="#">Experiment 1</a>
+        <a href="#">Results</a>
+        <a href="#">About</a>
+    </nav>
+
+    <section>
+        <h2>Experiment 1:</h2>
+        <img src="/minorproject/static/css/first.png" alt="q1">
+        <p>Aim: Design a FA with ∑ = {0, 1} accepts those string which starts with 1 and ends with 0.</p>
+
+        <div class="Theory">
+            <h3>Theory:</h3>
+            <p>States: To design the FA, you need to define the states. In this case, you'll have several states to represent different stages of processing the input string:</p>
+            <ul>
+                <li>Q0: This is the initial state where the FA starts reading the input string.</li>
+                <br>
+                <li>Q1: This state indicates that the FA has read at least one '1' at the beginning of the string</li>
+                <br>
+                <li>Q2: This is an accepting state, indicating that the FA has read '1' at the beginning and '0' at the end of the string.
+                </li>
+                <br>
+                <li>
+                    Q3: This is a dead state, representing an unrecoverable error state for invalid inputs. It ensures that the FA doesn't continue reading once an invalid input is encountered.  
+                </li>
+            </ul>
+            <p>Transitions: Transitions define how the FA moves between states based on the input symbols ('0' and '1').
+            </p>
+            <ul>
+                <li>
+                    From Q0:<br>
+                    On input '0', stay in Q0 to handle strings starting with '0'.<br>
+                    On input '1', transition to Q1 to indicate that the string starts with '1'.<br>
+                    <br>
+                </li>
+
+                <li>
+                    From Q1:<br>
+                    On input '0', transition to Q2 to indicate that the string ends with '0'.<br>
+                    On input '1', stay in Q1 to allow for additional '1's at the beginning.<br>
+
+                </li>
+                <br>
+                <li>
+                    From Q2:<br>
+                    On input '0', stay in Q2 to accept additional '0's at the end.<br>
+                    On input '1', transition back to Q1 to handle strings like "101" where '1' appears after '0'.<br>
+                    
+                </li>
+            <br>
+                <li>
+                    From Q3 (Dead State):
+                    On input '0' or '1', stay in Q3 to handle invalid inputs.
+                </li>
+            </ul>
+        </div>
+
+        <div class="Procedure">
+            <h3>Procedure:</h3>
+            <ol>
+                <li>Step 1</li>
+                <li>Step 2</li>
+                <li>Step 3</li>
+
+            </ol>
+        </div>
+
+        <div class="test-cases">
+            <h3>Test Cases:</h3>
+            <ul>
+                <li><strong>Test Case 1:</strong> String starts with '1' and ends with '0'<br>
+                <strong>Input:</strong> "101010"<br>
+                <strong>Expected Outcome:</strong> Accept (The input string starts with '1' and ends with '0'.)</li>
+                <br>
+                <li><strong>Test Case 2:</strong> String starts with '1' but does not end with '0'<br>
+                <strong>Input:</strong> "1001001"<br>
+                <strong>Expected Outcome:</strong> Reject (The input string starts with '1' but does not end with '0'.)</li>
+                <br>
+                <li><strong>Test Case 3:</strong> String ends with '0' but does not start with '1'<br>
+                <strong>Input:</strong> "001010"<br>
+                <strong>Expected Outcome:</strong> Reject (The input string ends with '0' but does not start with '1'.)</li>
+                <br>
+                <li><strong>Test Case 4:</strong> String contains only '1'<br>
+                <strong>Input:</strong> "1111"<br>
+                <strong>Expected Outcome:</strong> Reject (The input string does not end with '0'.)</li>
+                <br>
+                <li><strong>Test Case 5:</strong> String contains only '0'<br>
+                <strong>Input:</strong> "00000"<br>
+                <strong>Expected Outcome:</strong> Reject (The input string does not start with '1'.)</li>
+                <br>
+                <li><strong>Test Case 6:</strong> Empty String<br>
+                <strong>Input:</strong> ""<br>
+                <strong>Expected Outcome:</strong> Reject (The empty string does not meet the condition.)</li>
+                <br>
+                <li><strong>Test Case 7:</strong> Single '1'<br>
+                <strong>Input:</strong> "1"<br>
+                <strong>Expected Outcome:</strong> Reject (The input string is too short to meet the condition.)</li>
+                <br>
+                <li><strong>Test Case 8:</strong> Single '0'<br>
+                <strong>Input:</strong> "0"<br>
+                <strong>Expected Outcome:</strong> Reject (The input string is too short to meet the condition.)</li>
+                <br>
+                <li><strong>Test Case 9:</strong> String with spaces and other characters<br>
+                <strong>Input:</strong> "1 0 ! 1 0"<br>
+                <strong>Expected Outcome:</strong> Accept (The input string starts with '1' and ends with '0', ignoring spaces and other characters.)</li>
+                <br>
+                <li><strong>Test Case 10:</strong> Long string with valid start and end<br>
+                <strong>Input:</strong> "11010101010"<br>
+                <strong>Expected Outcome:</strong> Accept (The input string starts with '1' and ends with '0'.)</li>
+            </ul>
+            <p>
+                These test cases cover various scenarios to ensure that the FA correctly accepts strings that start with '1' and end with '0', while rejecting strings that do not meet this criteria.
+            </p>
+        </div>
+
+        <div class="conclusion">
+            <h3>Conclusion:</h3>
+            <p>
+                In conclusion, this FA has been designed to recognize strings that start with '1' and end with '0' by transitioning through states based on the input symbols. If the FA reaches the accepting state Q2, it means the input string satisfies the specified criteria and should be accepted. If it reaches the dead state Q3, it means the input is invalid, and the FA cannot proceed further.
+
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© TCS Vlab</p>
+    </footer>
+
+</body>
+</html>
