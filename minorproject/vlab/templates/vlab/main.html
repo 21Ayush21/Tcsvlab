@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
 </head>
 
-{{request.user.email}}
 
 {% include 'vlab/navbar.html' %}
 <body>
@@ -20,4 +19,6 @@
     {% endblock content %}
     
 </body>
+
+{% include 'vlab/footer.html' %}
 </html>

@@ -17,8 +17,8 @@
 
     <div class="background"></div>
     <form method="POST">
-      <h3>SIGNUP</h3>
-
+      <h3>LOGIN</h3>
+      {% csrf_token %}
 
       <label for="username">Username</label>
       <input
@@ -41,6 +41,12 @@
       <div class="social">
         <div class="go"><i class="fab fa-google"></i><a href="{% provider_login_url 'google' %}?next=/">GOOGLE</a></div>
       </div>
+
+      {% if messages %}
+        {% for message in messages %}
+          <p id="message">{{message}}</p>
+        {% endfor %}
+      {% endif %}
     </form>
   </body>
 </html>

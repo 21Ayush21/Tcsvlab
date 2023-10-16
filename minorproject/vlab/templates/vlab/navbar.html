@@ -5,22 +5,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" type='text/css' href="{% static '/css/navbar.css' %}">
 </head>
 
-<header>
+
+<body>
+    <div class="logo"><img src="{% static '/images/somaiyaimg.png' %}" alt="Logo"></div>
     <div class="navbar">
         <ul class="links">
             <li><a href="{% url 'home'%}">Home</a></li>
             <li><a href="{% url 'Theory'%}">Theory</a></li>
             <li><a href="{% url 'Simulator'%}">Simulator</a></li>
-            <li><a href="{% url 'Examples'%}">Examples</a></li>
+            <li><a href="{% url 'Experiments'%}">Experiment</a></li>
             <li><a href="{% url 'logout'%}"> Logout</a></li>
         </ul>
     </div>
-</header>
-<body>
     
 </body>
 </html>
