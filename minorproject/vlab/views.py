@@ -42,7 +42,7 @@ def LoginPage(request):
 
         if user is not None:
             login(request , user)
-            return redirect('home')
+            return redirect('Experiments')
         else:
             messages.info(request,"Invalid Username or Password")
      
@@ -57,3 +57,6 @@ def Examples(request):
 
 def experiment1(request):
     return render(request , 'vlab/experiment1.html')
+
+def experiment2(request):
+    return render(request , 'vlab/1.html')

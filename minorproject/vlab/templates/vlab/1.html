@@ -1,27 +1,20 @@
+{% load static %}
+{% include 'vlab/navbar.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experiment 1 - Virtual Lab</title>
-    <link rel="stylesheet" href="/minorproject/static/css/1.css"> 
+    <link rel="stylesheet" href="{% static '/css/1.css' %}"> 
 </head>
 <body>
 
-    <header>
-        <h1>Virtual Lab</h1>
-    </header>
     
-    <nav>
-        <a href="exp.html">Home</a>
-        <a href="#">Experiment 1</a>
-        <a href="#">Results</a>
-        <a href="#">About</a>
-    </nav>
 
     <section>
         <h2>Experiment 1:</h2>
-        <img src="/minorproject/static/css/first.png" alt="q1">
+        <img src="{% static '/images/first.png' %}" alt="q1">
         <p>Aim: Design a FA with ∑ = {0, 1} accepts those string which starts with 1 and ends with 0.</p>
 
         <div class="Theory">
@@ -137,9 +130,6 @@
         </div>
     </section>
 
-    <footer>
-        <p>© TCS Vlab</p>
-    </footer>
-
+    
 </body>
 </html>
