@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 5 - Virtual Lab</title>
+    <link rel="stylesheet" href="/minorproject/static/css/1.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Virtual Lab</h1>
+    </header>
+
+    <nav>
+        <a href="exp.html">Home</a>
+        <a href="#">Experiment </a>
+        <a href="#">Results</a>
+        <a href="#">About</a>
+    </nav>
+
+    <section>
+        <h2>Experiment 5:</h2>
+        <img src="/minorproject/static/images/5.png" alt="q1">
+        <p><strong>Aim:</strong> Draw a DFA for the language accepting strings ending with ‘00’ over input alphabets ∑={0, 1}</p>
+
+        <div class="Theory">
+            <h3>Theory:</h3>
+            <p>States: To design the DFA, you need to define the states. In this case, you'll have three states to represent different stages of processing the input string:</p>
+            <ul>
+                <li>Q0: This is the initial state where the DFA begins processing the input string.</li>
+                <li>Q1: This state indicates that the last symbol read was '0' but not two consecutive '0's.</li>
+                <li>Q2: This is an accepting state, indicating that the DFA has successfully read '00' at the end of the string.</li>
+            </ul>
+            <p>Transitions: Transitions define how the DFA moves between states based on the input symbols ('0' and '1').</p>
+            <ul>
+                <li><strong>From Q0:</strong><br>
+                    On input '0', transition to Q0 (to handle strings not ending with '00').<br>
+                    On input '1', transition to Q0 (to continue scanning for '00').</li>
+                <li><strong>From Q1:</strong><br>
+                    On input '0', transition to Q2 (to indicate the string ends with '00').<br>
+                    On input '1', transition to Q0 (to continue scanning for '00').</li>
+                <li><strong>From Q2:</strong><br>
+                    On input '0' or '1', stay in Q2 (to continue accepting '0's at the end).</li>
+            </ul>
+        </div>
+
+        <div class="Procedure">
+            <h3>Procedure:</h3>
+            <p>(using the simulator)</p>
+        </div>
+
+        <div class="test-cases">
+            <h3>Test Cases:</h3>
+            <ul>
+                <li><strong>Test Case 1:</strong> String ends with '00'<br>
+                    <strong>Input:</strong> "101100"<br>
+                    <strong>Expected Outcome:</strong> Accept (The input string ends with '00'.)</li>
+                <li><strong>Test Case 2:</strong> String ends with '00' but contains '1's in the middle<br>
+                    <strong>Input:</strong> "11011000"<br>
+                    <strong>Expected Outcome:</strong> Accept (The input string ends with '00' but contains '1's in the middle.)</li>
+                <li><strong>Test Case 3:</strong> String does not end with '00'<br>
+                    <strong>Input:</strong> "1010101"<br>
+                    <strong>Expected Outcome:</strong> Reject (The input string does not end with '00'.)</li>
+                <li><strong>Test Case 4:</strong> String contains only '0's and ends with '00'<br>
+                    <strong>Input:</strong> "0000"<br>
+                    <strong>Expected Outcome:</strong> Accept (The input string contains only '0's and ends with '00'.)</li>
+                <li><strong>Test Case 5:</strong> String contains only '1's<br>
+                    <strong>Input:</strong> "111111"<br>
+                    <strong>Expected Outcome:</strong> Reject (The input string does not end with '00'.)</li>
+                <li><strong>Test Case 6:</strong> Empty String<br>
+                    <strong>Input:</strong> ""<br>
+                    <strong>Expected Outcome:</strong> Reject (The empty string does not meet the condition.)</li>
+                <li><strong>Test Case 7:</strong> Single '0'<br>
+                    <strong>Input:</strong> "0"<br>
+                    <strong>Expected Outcome:</strong> Reject (The input string is too short to meet the condition.)</li>
+                <li><strong>Test Case 8:</strong> Single '1'<br>
+                    <strong>Input:</strong> "1"<br>
+                    <strong>Expected Outcome:</strong> Reject (The input string is too short to meet the condition.)</li>
+                <li><strong>Test Case 9:</strong> String with spaces and other characters<br>
+                    <strong>Input:</strong> "0 0 ! 1 0 0"<br>
+                    <strong>Expected Outcome:</strong> Accept (The input string ends with '00', ignoring spaces and other characters.)</li>
+                <li><strong>Test Case 10:</strong> Long string with valid end<br>
+                    <strong>Input:</strong> "10101010101000"<br>
+                    <strong>Expected Outcome:</strong> Accept (The input string ends with '00'.)</li>
+            </ul>
+            <p>These test cases cover various scenarios to ensure that the DFA correctly accepts strings that end with '00' and rejects strings that do not meet this condition.</p>
+        </div>
+
+        <div class="conclusion">
+            <h3>Conclusion:</h3>
+            <p>In summary, this DFA has been designed to recognize strings that end with '00' by transitioning through states based on the input symbols. If the DFA reaches the accepting state Q2, it means the input string satisfies the specified criteria and should be accepted. If it does not reach Q2, it indicates that the string does not end with '00', and the DFA rejects it.</p>
+        </div>
+        
