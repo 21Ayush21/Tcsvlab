@@ -60,3 +60,15 @@ def experiment1(request):
 
 def experiment2(request):
     return render(request , 'vlab/1.html')
+
+def experiment3(request):
+    return render(request , 'vlab/2.html')
+
+def experiment4(request):
+    return render(request , 'vlab/3.html')
+
+def experiment5(request):
+    return render(request , 'vlab/4.html')
+
+def experiment6(request):
+    return render(request , 'vlab/5.html')

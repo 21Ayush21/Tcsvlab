@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experiment 5 - Virtual Lab</title>
-    <link rel="stylesheet" href="/minorproject/static/css/1.css">
+    <link rel="stylesheet" href="{% static '/css/1.css' %}">
 </head>
 
 <body>
@@ -23,8 +24,8 @@
 
     <section>
         <h2>Experiment 5:</h2>
-        <img src="/minorproject/static/images/5.png" alt="q1">
-        <p><strong>Aim:</strong> Draw a DFA for the language accepting strings ending with ‘00’ over input alphabets ∑={0, 1}</p>
+        <img src="{% static '/images/5.png' %}" alt="q1">
+        <p><strong>Aim:</strong> Draw a DFA for the language accepting strings ending with '00' over input alphabets ∑={0, 1}</p>
 
         <div class="Theory">
             <h3>Theory:</h3>
