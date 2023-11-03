@@ -11,15 +11,22 @@
 
 <body>
     <div class="logo"><img src="{% static '/images/somaiyaimg.png' %}" alt="Logo"></div>
-    <div class="navbar">
-        <ul class="links">
-            <li><a href="{% url 'home'%}">Home</a></li>
-            <li><a href="{% url 'Theory'%}">Theory</a></li>
-            <li><a href="{% url 'Simulator'%}">Simulator</a></li>
-            <li><a href="{% url 'Experiments'%}">Experiment</a></li>
-            <li><a href="{% url 'logout'%}"> Logout</a></li>
-        </ul>
-    </div>
     
+    <ul>
+        <li><a href="{% url 'home'%}">Home</a></li>
+        <li>
+            <a href="#">Experiments &#9660;</a>
+            <ul class="dropdown">
+                <li><a href="{% url 'Experiment1'%}">Experiment 1</a></li>
+                <li><a href="{% url 'Experiment2'%}">Experiment 2</a></li>
+                <li><a href="{% url 'Experiment3'%}">Experiment 3</a></li>
+                <li><a href="{% url 'Experiment4'%}">Experiment 4</a></li>
+                <li><a href="{% url 'Experiment5'%}">Experiment 5</a></li>
+            </ul>
+        </li>
+        <li><a href="{% url 'Theory'%}">Theory</a></li>
+        <li><a href="{% url 'Simulator'%}">Simulator</a></li>
+        <li><a href="{% url 'logout'%}">Logout</a></li>
+    </ul>
 </body>
 </html>
