@@ -42,7 +42,7 @@ def LoginPage(request):
 
         if user is not None:
             login(request , user)
-            return redirect('Experiments')
+            return redirect('Simulator')
         else:
             messages.info(request,"Invalid Username or Password")
      
