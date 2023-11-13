@@ -1,52 +1,75 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Login Page</title>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+    <link rel="stylesheet" href="{% static '/css/login.css' %}" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{% static '/css/login.css' %}" />
   </head>
   <body>
     {% load socialaccount %}
-    <div class="background"></div>
-    <form method="POST">
-      <h3>LOGIN</h3>
-      {% csrf_token %}
+    
+    <main>
+      <section class="form-container">
+        <div class="form form-login">
+          <div class="form-content">
+            <header>LOGIN</header>
 
-      <label for="username">Username</label>
-      <input
-        type="text"
-        placeholder="example@somaiya.edu"
-        id="username"
-        name="username"
-      />
+            <form method="POST">
+              {% csrf_token %} 
+              <div class="field input-field">
+                <input type="text" class="input" placeholder="Username" id="username" name="username"/>
+              </div>
 
-      <label for="password">Password</label>
-      <input
-        type="password"
-        placeholder="Password"
-        id="password"
-        name="password"
-      />
+              <div class="field input-field">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  id="password"
+                  name="password"
+                />
+                <i class="bx bx-hide eye-icon"></i>
+              </div>
 
-      <button>Log In</button>
-      <p>Don't have an account? <a href="{% url 'register'%}">Signup</a></p>
-      <div class="social">
-        <div class="go"><i class="fab fa-google"></i><a href="{% provider_login_url 'google' %}?next=/">GOOGLE</a></div>
-      </div>
+              <div class="field button-field">
+                <button>Login</button>
+              </div>
 
-      {% if messages %}
-        {% for message in messages %}
-          <p id="message">{{message}}</p>
-        {% endfor %}
-      {% endif %}
-    </form>
+              {% if messages %} 
+              {% for message in messages %}
+              <p id="message">{{message}}</p>
+              {% endfor %} 
+              {% endif %}
+
+              <div class="register-link">
+                <span
+                  >Don't have an account?
+                  <a href="{% url 'register'%}" class="signup"
+                    >Register</a
+                  ></span
+                >
+              </div>
+            </form>
+          </div>
+          <div class="line"></div>
+
+          <div class="media-options">
+            <a
+              href="{% provider_login_url 'google' %}?next=/"
+              class="field google"
+            >
+              <i class="bx bxl-google google-icon"></i>
+              <span>Login with Google</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
