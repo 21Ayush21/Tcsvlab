@@ -1,36 +1,59 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Login Page</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static '/css/register.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="{% static '/javascript/eyeicon.js' %}"></script>
+</head>
+<body>
+    <main>
+        <section class="form-container">
+            <div class="form form-login">
+                <div class="form-content">
+                    <header>Signup</header>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="{% static '/css/register.css' %}" />
-  </head>
-  <body>
-    <div class="background"></div>
-    <form method="POST">
-        {% csrf_token %} 
-      <h3>SIGNUP</h3>
+                    <form action="POST">
+                      {% csrf_token %}
+                        <div class="field input-field">
+                            <!-- <input type="text" class="input" placeholder="Username"> -->
+                            {{form.username}}
+                        </div>
 
-      <label for="username">Username</label>
-      {{form.username}}
+                        <div class="field input-field">
+                            <!-- <input type="email" class="input" placeholder="Email"> -->
+                            {{form.email}}
+                        </div>
 
-      <label for="username">Email Address</label>
-      {{form.email}}
+                        <div class="field input-field">
+                            <!-- <input type="password" class="password" placeholder="Password"> -->
+                            {{form.password1}}
+                            <i class='bx bx-hide eye-icon'></i>                          
+                        </div>
 
-      <label for="password">Password</label>
-      {{form.password1}}
+                        <div class="field input-field">
+                            <!-- <input type="password" class="password" placeholder="Re-enter Password"> -->
+                            {{form.password2}}
+                            <i class='bx bx-hide eye-icon'></i>                          
+                        </div>
 
-      <label for="password">Re-Enter Password</label>
-      {{form.password2}}
+                        <div class="field button-field">
+                            <button>Signup</button>
+                        </div>
 
-      <button>SIGNUP</button>
-      
-    </form>
-  </body>
+                        <div class="register-link">
+                            <span>Already have an account? <a href="{% url 'login' %}" class="signup">Login</a></span>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+</body>
+
 </html>

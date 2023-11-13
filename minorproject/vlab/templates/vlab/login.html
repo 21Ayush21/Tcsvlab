@@ -11,6 +11,7 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script src="{% static '/javascript/eyeicon.js' %}"></script>
   </head>
   <body>
     {% load socialaccount %}
@@ -34,7 +35,8 @@
                   id="password"
                   name="password"
                 />
-                <i class="bx bx-hide eye-icon"></i>
+                <img  class="bx bx-hide eye-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAgtJREFUSEu11Umoj1EYx/HPZYNSMhRCKUOxIUNJxlJkQUpkYaMUW2WDbJSNBQuywMKQskFJycIYRSiZSRIZI8nGUHpuz70dp/cO5X/P5q1znnO+5/d7nue8bfp4tPXx+WrAVhzF+1aBS8Bm7MdTzMfHVkBKwEhcwwQ8Scin/4XUFo3CFUzEfazEsvyOR6zHCAtf4xyOd6e2Kcmlkt4I+J3W7sD3ekNXVVQqiT3bcRkP84BQOAlzsRH98RKLUlknpwaMTksOpx0ddj3OzR8aJE3GCczAG8xEZ1wJ6IereavlOF9BYtNwfMY+7C5gA3ED03AJizvWSsAW7EmpcYuvGRQ5CXDYUo5dCN87xjjcw1Csx7FYKAFvERatwunqsDonsRzxY6q4DTiE25hdAx5gKtbgVIPXNeQLhlVxK3AGj/KsfxSsxclM1PT0uuaUkEjorOJZCTV3MQJLcaFWEEm+jjnZ0VFyfxqUlDl5lh0fcVFxU3AQm5qSHHNDcDFLLZ6NSNarHux6jgEYi5tYgF9dAWJ+MM5m3f/EAdxC3PYFvuXmOifRhEvwrrxQV50cnbkT2xDWlSPsWJ2VVj4rAZhXlHf7np5+OCF7XSYt6jwOHIQfacWdbMbok3iFo+MXlo9fT4AG+xunSiXxP4k8tD8XrQLEWWVOouGOtBrQAYlG3dtdFfXWll7FtdKiRuBfk89tGRWUO/gAAAAASUVORK5CYII="/>
+                <!-- <i class="bx bx-hide eye-icon"></i> -->
               </div>
 
               <div class="field button-field">
@@ -64,7 +66,8 @@
               href="{% provider_login_url 'google' %}?next=/"
               class="field google"
             >
-              <i class="bx bxl-google google-icon"></i>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAbRJREFUSEvV1U2Ij1EUBvDfLHw1ZGFrI6nRiFj4iiyZZKmhLLCyRCmLyYIkhWytxsZXs5hJYqXUjIWVIoSU2CBFpKF8dfRO3a73/v+3qSnO5q33PPc89zz33Of2mOHomeH6/gmCNdiKddjIn009wTPcwFgnFTp1MBuncbCLjBPYiTdtuBLBcoygv/KMYiNHawnm4gGWtSx4iu9YisBFXMEe/KwlOIdDCfgbTuIC3jX/Z+EYotNB/Ch1mku0BXcS8GesxotKqf6C5QSXsTtB7cfwdIvHupzgHtY2BT9hYVZ8Hm51ITyB21OYnOA9FjXJGL/NWbH5CNk6xRGcKRG8xuImeRebpkEQA3K+RHAdO5rkJHrxKyFpkyg6XpFgduFaiSD0G0rA+3CxiyRncTjBLMHLEkEkHyeX6CNW4VWBZCXirBY0+UdZN61uGlf+VFLwA/Yi5JuK8KkDOJ5NWoz41XQzbV4Ut/R+iw8F0XPEJIVVzMm6uonteacls+vDKOJbE+MYwJdagsCFDCFVeoD5+q8I7wpfavWjmhctvGgbNmB9c/sfNo/NJbzt1GINQY1ERcz/T/AbYzBHGUm0L68AAAAASUVORK5CYII="/>
+              
               <span>Login with Google</span>
             </a>
           </div>
