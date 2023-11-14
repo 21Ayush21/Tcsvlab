@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="{% static '/css/1.css' %}"> 
 </head>
 <body>
-
-    
-
     <section>
         <h2>Experiment 1:</h2>
         <img src="{% static '/images/first.png' %}" alt="q1">
@@ -125,12 +122,9 @@
             <h3>Conclusion:</h3>
             <p>
                 In conclusion, this FA has been designed to recognize strings that start with '1' and end with '0' by transitioning through states based on the input symbols. If the FA reaches the accepting state Q2, it means the input string satisfies the specified criteria and should be accepted. If it reaches the dead state Q3, it means the input is invalid, and the FA cannot proceed further.
-
             </p>
         </div>
-    </section>
-
-    
+    </section>   
 </body>
 {% include 'vlab/footer.html' %}
 </html>
