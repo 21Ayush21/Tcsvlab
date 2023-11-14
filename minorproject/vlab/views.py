@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import logout , authenticate , login
 from .forms import Signup 
+from .models import User
 from django.contrib import messages
 from .decorator import unauthenticated_user
 
@@ -25,10 +26,14 @@ def register(request):
     if request.method == 'POST':
         form = Signup(request.POST)
         if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'Account was created successfully for ' + user)
-            return redirect('login')
+            username = form.cleaned_data.get('username')
+            
+            if User.objects.filter(username=username).exists():
+                messages.error(request , 'Username already exists. Please choose another username.')
+            else:
+                form.save()
+                messages.success(request, 'Account was created successfully for ' + username)
+                return redirect('login')
     
     return render(request ,'vlab/register.html' , {'form' : form})
 
