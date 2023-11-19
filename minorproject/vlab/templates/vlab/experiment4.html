@@ -1,0 +1,173 @@
+{% load static %} {% include 'vlab/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment 4 - Virtual Lab</title>
+    <link rel="stylesheet" href="{% static '/css/experiment2.css' %}" />
+  </head>
+
+  <body>
+    <main>
+        <section class="container">
+          <header>
+            Experiment NO.4 <br>
+            Aim: Design FA with ∑ = {0, 1} accepts even number of
+          0's and even number of 1's.
+          </header>
+          <div class="textbox">
+            <h3>Theory</h3>
+            <div class="text">
+              <p>
+                  States: To design the FA, you need to define the states. In this case,
+                  you'll have several states to represent different parity (even or odd)
+                  counts of '0's and '1's in the input string. We will define the states
+                  as follows:
+                </p>
+                <br>
+                <ul>
+                  <li>
+                    Q0: Initial state. Represents an even number of '0's and an even
+                    number of '1's encountered so far.
+                  </li>
+                  <li>
+                    Q1: Represents an odd number of '0's and an even number of '1's
+                    encountered so far.
+                  </li>
+                  <li>
+                    Q2: Represents an even number of '0's and an odd number of '1's
+                    encountered so far.
+                  </li>
+                  <li>
+                    Q3: Represents an odd number of '0's and an odd number of '1's
+                    encountered so far.
+                  </li>
+                </ul>
+                <br>
+                <p>
+                  Transitions: Transitions define how the FA moves between states based
+                  on the input symbols ('0' and '1') and the desired behavior of the FA:
+                </p>
+                <br>
+                <ul>
+                  <li>
+                    <strong>From Q0:</strong><br />
+                    On input '0', transition to Q1 (to represent an odd number of
+                    '0's).<br />
+                    On input '1', transition to Q2 (to represent an odd number of '1's).
+                  </li>
+                  <li>
+                    <strong>From Q1:</strong><br />
+                    On input '0', transition to Q0 (to return to even '0's).<br />
+                    On input '1', transition to Q3 (to represent an odd number of '0's
+                    and '1's).
+                  </li>
+                  <li>
+                    <strong>From Q2:</strong><br />
+                    On input '0', transition to Q3 (to represent an odd number of '0's
+                    and '1's).<br />
+                    On input '1', transition to Q0 (to return to even '1's).
+                  </li>
+                  <li>
+                    <strong>From Q3:</strong><br />
+                    On input '0', transition to Q2 (to return to even '0's).<br />
+                    On input '1', transition to Q1 (to return to even '1's).
+                  </li>
+                </ul>
+            </div>
+            <h3>Test Cases:</h3>
+            <div class="text">
+              <ul>
+                  <li>
+                    <strong>Test Case 1:</strong> Even number of '0's and '1's<br />
+                    <strong>Input:</strong> "001100"<br />
+                    <strong>Expected Outcome:</strong> Accept (The input string contains
+                    two '0's and two '1's, which is even for both.)<br /><br />
+                  </li>
+                  <li>
+                    <strong>Test Case 2:</strong> Odd number of '0's and even number of
+                    '1's<br />
+                    <strong>Input:</strong> "0110"<br />
+                    <strong>Expected Outcome:</strong> Reject (The input string contains
+                    three '0's, which is odd for '0's.)<br /><br />
+                  </li>
+                  <li>
+                    <strong>Test Case 3:</strong> Even number of '0's and odd number of
+                    '1's<br />
+                    <strong>Input:</strong> "10011"<br />
+                    <strong>Expected Outcome:</strong> Reject (The input string contains
+                    three '1's, which is odd for '1's.)<br /><br />
+                  </li>
+                  <li>
+                    <strong>Test Case 4:</strong> Empty String<br />
+                    <strong>Input:</strong> ""<br />
+                    <strong>Expected Outcome:</strong> Accept (The empty string contains
+                    an even number of both '0's and '1's, which is 0 for both.)<br /><br />
+                  </li>
+                  <li>
+                    <strong>Test Case 5:</strong> String with only '0's<br />
+                    <strong>Input:</strong> "000000"<br />
+                    <strong>Expected Outcome:</strong> Accept (The input string contains
+                    six '0's, which is even for '0's.)<br /><br />
+                  </li>
+                  <li>
+                    <strong>Test Case 6:</strong> String with only '1's<br />
+                    <strong>Input:</strong> "111"<br />
+                    <strong>Expected Outcome:</strong> Accept (The input string contains
+                    three '1's, which is even for '1's.)<br /><br />
+                  </li>
+                  <li>
+                    <strong>Test Case 7:</strong> Alternating '0's and '1's<br />
+                    <strong>Input:</strong> "010101"<br />
+                    <strong>Expected Outcome:</strong> Accept (The input string contains
+                    three '0's and three '1's, which is even for both.)<br /><br />
+                  </li>
+                  <li>
+                    <strong>Test Case 8:</strong> Long string with even numbers<br />
+                    <strong>Input:</strong> "00001111000011110000"<br />
+                    <strong>Expected Outcome:</strong> Accept (The input string contains
+                    an even number of '0's and an even number of '1's.)<br /><br />
+                  </li>
+                  <li>
+                    <strong>Test Case 9:</strong> Single '0' and Single '1'<br />
+                    <strong>Input:</strong> "01"<br />
+                    <strong>Expected Outcome:</strong> Reject (The input string contains
+                    an even number of '0's but an odd number of '1's.)<br /><br />
+                  </li>
+                  <li>
+                    <strong>Test Case 10:</strong> String with spaces and other
+                    characters<br />
+                    <strong>Input:</strong> "0 1 1 0"<br />
+                    <strong>Expected Outcome:</strong> Accept (The input string contains
+                    an even number of '0's and an even number of '1's, ignoring spaces
+                    and other characters.)<br /><br />
+                  </li>
+                </ul>
+                <p>
+                  These test cases cover various scenarios to ensure that the FA
+                  correctly accepts strings with an even number of '0's and an even
+                  number of '1's while rejecting strings that do not meet this criteria.
+                </p>
+            </div>
+  
+            <h3>Conclusion</h3>
+            <div class="text">
+              <p>
+                  In conclusion, we have designed a finite automaton (FA) that accepts
+                  strings with an even number of both '0's and '1's over the input
+                  alphabet ∑ = {0, 1}. The FA maintains four states, representing
+                  different parity combinations of '0's and '1's, and transitions
+                  between these states based on the input symbols. All states in this FA
+                  are accepting states because they represent even parity.
+                </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+    <footer>
+      <p>© TCS Vlab</p>
+    </footer>
+  </body>
+</html>

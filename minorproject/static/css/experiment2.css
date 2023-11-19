@@ -8,7 +8,7 @@ html {
 }
 
 header {
-  font-size: 3rem;
+  font-size: 1.5rem;
   text-align: left;
   height: 50px;
   color: #ae2929;
@@ -26,20 +26,11 @@ header {
 
 .textbox {
   padding: 30px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-align: justify;
 }
 
-.image {
-  display: block;
-  width: 50%;
-  height: 50%;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  border: 2px solid black;
-}
-
-.basics {
+.text {
   margin-bottom: 30px;
   background-color: #d7d6d6;
   padding: 10px;
@@ -56,10 +47,20 @@ h3 {
   font-size: 2rem;
 }
 
-.text {
-  margin-bottom: 30px;
-  background-color: #d7d6d6;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Theory,
+  .Procedure,
+  .test-cases,
+  .conclusion {
+    padding: 15px;
+  }
 }

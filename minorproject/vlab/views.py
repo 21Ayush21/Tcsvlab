@@ -64,19 +64,19 @@ def experiment1(request):
     return render(request , 'vlab/experiment1.html')
 
 def experiment2(request):
-    return render(request , 'vlab/1.html')
+    return render(request , 'vlab/experiment2.html')
 
 def experiment3(request):
-    return render(request , 'vlab/2.html')
+    return render(request , 'vlab/experiment3.html')
 
 def experiment4(request):
-    return render(request , 'vlab/3.html')
+    return render(request , 'vlab/experiment4.html')
 
 def experiment5(request):
-    return render(request , 'vlab/4.html')
+    return render(request , 'vlab/experiment5.html')
 
 def experiment6(request):
-    return render(request , 'vlab/5.html')
+    return render(request , 'vlab/experiment6.html')
 
 def feedback(request):
     if request.method == 'POST':

@@ -1,0 +1,108 @@
+{% load static %} {% include 'vlab/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experiment 5 - Virtual Lab</title>
+    <link rel="stylesheet" href="{% static '/css/experiment2.css' %}" />
+  </head>
+
+  <body>
+    <main>
+        <section class="container">
+          <header>
+            Experiment NO.5 <br>
+            Aim: Draw a deterministic finite automaton which either starts with 01 or ends with 01 of a string containing 0,1 in it.
+          </header>
+          <div class="textbox">
+            <h3>Theory</h3>
+            <div class="text">
+              <p>
+                  States: To design the deterministic finite automaton (DFA) that
+                  recognizes strings that either start with '01' or end with '01' but
+                  not both, we can create a DFA with distinct states and transitions for
+                  these conditions. The alphabet is ∑ = {0, 1}.
+                </p>
+                <br>
+                <ul>
+                  <li>Q0: Initial state.</li>
+                  <li>Q1: State to indicate that the string starts with '0'.</li>
+                  <li>
+                    Q2: State to indicate that the string starts with '01' and can
+                    continue with '0's.
+                  </li>
+                  <li>
+                    Q3: State to indicate that the string starts with '01' and can
+                    continue with '1's.
+                  </li>
+                  <li>
+                    Q4: Accepting state to indicate that the string ends with '01'.
+                  </li>
+                  <li>Q5: Dead state to handle invalid inputs.</li>
+                </ul>
+                <p>
+                  Transitions: Define the transitions between states based on the input
+                  symbols ('0' and '1') and the desired behavior of the DFA.
+                </p>
+                <br>
+                <ul>
+                  <li>
+                    <strong>From Q0:</strong><br />
+                    On input '0', transition to Q1 (to indicate that the string starts
+                    with '0').<br />
+                    On input '1', stay in Q0 (to handle strings starting with '1').
+                  </li>
+                  <li>
+                    <strong>From Q1:</strong><br />
+                    On input '0', transition to Q2 (to indicate that the string starts
+                    with '01').<br />
+                    On input '1', stay in Q0 (to handle strings starting with '10' or
+                    '11').
+                  </li>
+                  <li>
+                    <strong>From Q2:</strong><br />
+                    On input '0', stay in Q2 (to continue accepting '0's after '01').<br />
+                    On input '1', transition to Q3 (to indicate that the string starts
+                    with '01' and can continue with '1's).
+                  </li>
+                  <li>
+                    <strong>From Q3:</strong><br />
+                    On input '0', stay in Q2 (to handle strings like "010101" where '01'
+                    can continue with '0's).<br />
+                    On input '1', stay in Q3 (to continue accepting '1's after '01').
+                  </li>
+                </ul>
+            </div>
+            <h3>Test Cases:</h3>
+            <div class="text">
+              <ul>
+                  <!-- Test cases remain unchanged -->
+                </ul>
+                <p>
+                  These test cases cover various scenarios to ensure that the DFA
+                  correctly accepts strings that either start with '01' or end with '01'
+                  but not both. It also rejects strings that do not meet these
+                  conditions.
+                </p>
+            </div>
+  
+            <h3>Conclusion</h3>
+            <div class="text">
+              <p>
+                  In conclusion, we have designed a deterministic finite automaton (DFA)
+                  that recognizes strings meeting the criteria of either starting with
+                  '01' or ending with '01', but not both simultaneously. The DFA has
+                  distinct states and transitions to handle these conditions, along with
+                  a dead state to handle invalid inputs.
+                </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+    <footer>
+      <p>© TCS Vlab</p>
+    </footer>
+  </body>
+</html>

@@ -9,53 +9,82 @@
     <link rel="stylesheet" type="text/css" href="{% static '/css/experiment1.css' %}">
 </head>
 <body>
-    
-    <h1>Introduction To the Simulator</h1>
-    <p class="intro_text">The Simulator helps better visualize the finite automaton and also test a given automaton</p>
-    <div class="para">
-        <h3>Toolbar</h3>
-        <div class="toolbar">
-            <img class="para_img" src="{% static '/images/sim_toolbar.png' %}" alt="toolbar">
+    <main>
+      <section class="container">
+        <header>Introduction To the Simulator</header>
+        <div class="textbox">
+          <h3>Toolbar</h3>
+          <img class="image" src="{% static '/images/sim_toolbar.png' %}" alt="sim_toolbar" />
+          <div class="text">
             <p>The toolbar consists of 5 buttons:</p>
-            <p>1.Cursor- It will let us select and drag any elements and make connections betweens nodes</p>
-            <p>2.+ Button- On selecting it adds a new node where the the cursor is by clicking mouse 1</p>
-            <p>3.Delete Button- On selecting it deletes the node where the the cursor is by clicking mouse 1</p>
-            <p>4.Grid - Toggles the grid in the main canvas</p>
-            <p>5.Theme - Toggles between night and dark mode</p>
+            <ol>
+              <li>
+                Cursor- It will let us select and drag any elements and make
+                connections betweens nodes
+              </li>
+              <li>
+                + Button- On selecting it adds a new node where the the cursor
+                is by clicking mouse 1
+              </li>
+              <li>
+                Delete Button- On selecting it deletes the node where the the
+                cursor is by clicking mouse 1
+              </li>
+              <li>Grid - Toggles the grid in the main canvas</li>
+              <li>Theme - Toggles between night and dark mode</li>
+            </ol>
+          </div>
+
+          <h3>States and Transitions</h3>
+          <img class="image" src="{% static '/images/sim_legend.png' %}" alt="sim_legend" />
+          <div class="text">
+            All the nodes and their inputs are shown here as states <br />1
+            State Label<br />
+            2 Make Start Button<br />
+            3 Make Final Button <br />4 Delete State Button <br />5 Transition
+            From State <br />6 Transition Input <br />7 Transion to state
+            <br />8 Delete Transition <br />9 Evaluation Status <br />10 Input
+            <br />11 Delete Input Field
+          </div>
+
+          <h3>FSM Construction</h3>
+          <img src="{% static '/images/sim_io.png' %}"alt="sim_io" class="image" />
+          <div class="text">
+            The basic layout of an FSM when constructed in the Simulator. <br />
+            <strong> -> </strong> and <strong> * </strong> if the state is made
+            the start state or a final state.
+          </div>
+
+          <h3>Evaluation</h3>
+          <img src="{% static '/images/fsm_ex.png' %}" alt="fsm_ex" class="image" />
+          <div class="text">
+            In the above example only strings 101 would be accepted by the FSM
+          </div>
+
+          <img src="{% static '/images/fsm_states.png' %}" alt="fsm_states" class="image" />
+          <div class="text">This is how the states will look for it.</div>
+
+          <img src="{% static '/images/fsm_eval.png' %}" alt="fsm_eval" class="image" />
+          <div class="text">
+            This is how if the string is accepted and string is rejected will <br>
+            look like Run the test using the play button.
+          </div>
+
+          <img src="{% static '/images/sim_animation.png' %}" alt="sim_animation" class="image">
+          <div class="text">
+            1 Start/Stop Animation Mode <br>
+            2 Parsed Characters<br>
+            3 Remaining Characters<br>
+            4 Status Indicator<br>
+            5 Back to first frame<br>
+            6 Previous Frame<br>
+            7 Play/Pause/Replay<br>
+            8 Next Frame<br>
+            9 Skip to last frame
+          </div>
         </div>
-    </div>
-
-    <div class="para">
-        <h3>States and Transitions</h3>
-        <img class ="sim_legendimg" src="{% static '/images/sim_legend.png' %}" alt="sim_legend">
-        <p>All the nodes and their inputs are shown here as states</p>
-    </div>
-
-    <div class="para">
-        <h3>FSM Construction</h3>
-        <img class="sim_ioimg" src="{% static '/images/sim_io.png' %}" alt="sim_construction">
-        <p>The basic layout of an FSM when constructed in the Simulator</p>
-        <p>-> and * if the state is made the start state or a final state</p>
-    </div>
-
-    <div class="para">
-        <h3>Evaluation</h3>
-        <img class="fsm_eximg"src="{% static '/images/fsm_ex.png' %}" alt="example">
-        <br>
-        <p>In the above example only strings 101 would be accepted by the FSM</p>
-        <br>
-        <img class="fsm_statesimg"src="{% static '/images/fsm_states.png' %}" alt="states">
-        <br>
-        <p>This is how the states will look for it </p>
-        <br>
-        <img class="fsm_evalimg"src="{% static '/images/fsm_eval.png' %}" alt="eval">
-        <br>
-        <p>This is how if the string is accepted and string is rejected will look like </p>
-        <p>Run the test using the play button</p>
-    </div>
-
-
-    
-</body>
+      </section>
+    </main>
+  </body>
 {% include 'vlab/footer.html' %}
 </html>
