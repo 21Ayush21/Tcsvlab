@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Feedback Form</h2>
+
+    <form action="#" method="POST" id="feedbackForm">
+       {% csrf_token %}
+        <label for="courseName">Course Name:</label>
+        {% comment %} <input type="text" id="courseName" name="courseName" required> {% endcomment %}
+        {{form.course_name}}
+
+        <label for="semester">Semester:</label>
+        {% comment %} <input type="text" id="semester" name="semester" required> {% endcomment %}
+        {{form.semester}}
+
+        <label for="rating">Rating:</label>
+        {{form.rating}}
+        {% comment %} <select id="rating" name="rating" required>
+            <option value="">Select Rating</option>
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="average">Average</option>
+            <option value="poor">Poor</option>
+        </select> {% endcomment %}
+
+        <label for="suggestions">Suggestions:</label>
+        {% comment %} <textarea id="suggestions" name="suggestions" rows="4"></textarea> {% endcomment %}
+        {{form.suggestions}}
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+</body>
+</html>

@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required 
 from django.contrib.auth import logout , authenticate , login
-from .forms import Signup 
+from .forms import Signup , Feedback
 from .models import User
 from django.contrib import messages
 from .decorator import unauthenticated_user
@@ -77,3 +77,13 @@ def experiment5(request):
 
 def experiment6(request):
     return render(request , 'vlab/5.html')
+
+def feedback(request):
+    if request.method == 'POST':
+        form1 = Feedback(request.POST)
+        if form1.is_valid():
+            form1.save(user=request.user)
+            return redirect('Simulator')
+    else:
+        form1 = Feedback()
+    return render(request , 'vlab/Feedback.html' , {'form':form1})

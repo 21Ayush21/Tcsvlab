@@ -3,7 +3,7 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from .models import UserProfile
+from .models import UserProfile , FeedbackForm
 
 
 class Signup(UserCreationForm):
@@ -17,5 +17,14 @@ class Signup(UserCreationForm):
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Re-Enter Password'}))
 
 
+class Feedback(forms.ModelForm):
+    class Meta:
+        model = FeedbackForm
+        fields = ['course_name' , 'semester' , 'rating' , 'suggestions']
 
-    
+    def save(self , user , commit=True):
+        instance = super().save(commit=False)
+        instance.user = user
+        if commit:
+            instance.save()
+        return instance
