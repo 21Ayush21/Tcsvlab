@@ -10,7 +10,7 @@
     background: #ae2929;
 }
 
-ul li{
+.navbar-ul li{
     display: inline-block;
     position: relative;
 }
