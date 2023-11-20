@@ -57,33 +57,45 @@ def LoginPage(request):
 def Simulator(request):
     return render(request , 'vlab/Simulator.html')
 
+@login_required(login_url='login')
 def Examples(request):
     return render(request , 'vlab/experiments.html')
 
+@login_required(login_url='login')
 def experiment1(request):
     return render(request , 'vlab/experiment1.html')
 
+@login_required(login_url='login')
 def experiment2(request):
     return render(request , 'vlab/experiment2.html')
 
+@login_required(login_url='login')
 def experiment3(request):
     return render(request , 'vlab/experiment3.html')
 
+@login_required(login_url='login')
 def experiment4(request):
     return render(request , 'vlab/experiment4.html')
 
+@login_required(login_url='login')
 def experiment5(request):
     return render(request , 'vlab/experiment5.html')
 
+@login_required(login_url='login')
 def experiment6(request):
     return render(request , 'vlab/experiment6.html')
 
+@login_required(login_url='login')
 def feedback(request):
     if request.method == 'POST':
         form1 = Feedback(request.POST)
         if form1.is_valid():
             form1.save(user=request.user)
-            return redirect('Simulator')
+            return redirect('Feeback_submitted')
     else:
         form1 = Feedback()
     return render(request , 'vlab/Feedback.html' , {'form':form1})
+
+@login_required(login_url='login')
+def feedback_submit(request):
+    return render(request , 'vlab/feedback_submitted.html')

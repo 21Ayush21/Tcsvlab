@@ -5,12 +5,12 @@ from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
-    path('',views.home , name='home'),
+    path('home/',views.home , name='home'),
     path('logout/', LogoutView.as_view(next_page='login') , name='logout'),
     path('login/',views.LoginPage, name='login'),
     path('Theory/',views.Theory , name='Theory'),
     path('register/',views.register,name='register'),
-    path('Simulator/',views.Simulator , name='Simulator'),
+    path('',views.Simulator , name='Simulator'),
     path('Experiments/',views.Examples , name='Experiments'),
     path('Experiments/Experiment1/',views.experiment1 , name='Experiment1'),
     path('Experiments/Experiment2/',views.experiment2 , name='Experiment2'),
@@ -19,6 +19,7 @@ urlpatterns = [
     path('Experiments/Experiment5/',views.experiment5 , name='Experiment5'),
     path('Experiments/Experiment6/',views.experiment6 , name='Experiment6'),
     path('Feedback/',views.feedback , name='Feedback'),
+    path('Feedback_submitted/',views.feedback_submit , name= 'Feeback_submitted'),
     path('reset_password' , auth_views.PasswordResetView.as_view() , name="reset_password"),
     path('reset_password_sent' , auth_views.PasswordResetDoneView.as_view() , name="password_reset_done"),
     path('reset/<uidb64>/<token>/' , auth_views.PasswordResetView.as_view() , name="password_reset_confirm"),

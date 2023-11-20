@@ -1,38 +1,44 @@
 {% include 'vlab/navbar.html' %}
 
-<p>Tutorial for using the <a href="{% url 'Experiment1'%}">Simulator </a></p>
+<p class='tut'>Tutorial for using the <a href="{% url 'Experiment1'%}">Simulator </a></p>
 <div class="container">
+    <div class="simulator">
 
-    <iframe
-    allowtransparency="true"
-    webkitallowfullscreen="true"
-    mozallowfullscreen="true"
-    msallowfullscreen="true"
-    src="https://html.itch.zone/html/9034964/index.html"
-    frameborder="0"
-    allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated"
-    scrolling="no"
-    id="game_drop"
-    allowfullscreen="true"
-    height="720"
-    width="1280"
-    ></iframe>
+        <iframe
+        allowtransparency="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+        msallowfullscreen="true"
+        src="https://html.itch.zone/html/9140129/index.html"
+        frameborder="0"
+        allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated"
+        scrolling="no"
+        id="game_drop"
+        allowfullscreen="true"
+        height="720"
+        width="1280"
+        ></iframe>
+    </div>
 
 </div>
 
 <style>
-    p{
-        text-align: center;
-        font-size: 20px;
-        font-weight: bold;
-    }
     .container{
+        background-color: whitesmoke;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 10px;
     }
+    .tut{
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
 </style>
+
+{% include 'vlab/footer.html' %}
 
 
 <script>
