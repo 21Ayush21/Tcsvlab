@@ -12,3 +12,5 @@ __pycache__
 myenv/
 .venv/
 tcsenv/
+
+.env
