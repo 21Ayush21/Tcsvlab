@@ -55,7 +55,7 @@ def LoginPage(request):
 
 @login_required(login_url='login')
 def Simulator(request):
-    return render(request , 'vlab/Simulator.html')
+    return render(request , 'vlab/simulator.html')
 
 @login_required(login_url='login')
 def Examples(request):
