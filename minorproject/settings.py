@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hlw2fn4c!b5^(t%=hsx-s%cdto=9%vhts#&%-8nzy76_44sj$4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'vlab.apps.VlabConfig',
     'django.contrib.sites',
@@ -55,7 +56,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin'
 
-SITE_ID = 2
+SITE_ID = 4
 
 SOCIALACCOUNT_LOGIN_ON_GET = True
 
@@ -110,20 +111,20 @@ WSGI_APPLICATION = 'minorproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-import dj_database_url
-
 DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
+# import dj_database_url
 
+# DATABASES = {
+#     'default': dj_database_url.parse(env('DATABASE_URL'))
+# }
+
+USE_X_FORWARDED_HOST = True
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
