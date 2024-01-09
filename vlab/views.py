@@ -94,7 +94,7 @@ def feedback(request):
             return redirect('Feeback_submitted')
     else:
         form1 = Feedback()
-    return render(request , 'vlab/Feedback.html' , {'form':form1})
+    return render(request , 'vlab/feedback.html' , {'form':form1})
 
 @login_required(login_url='login')
 def feedback_submit(request):
