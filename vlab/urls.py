@@ -1,3 +1,17 @@
+# This file defines URL patterns for the Django application, mapping various URLs 
+# to their corresponding views.
+# 
+# - The `path()` function is used to associate each URL with a view function or class-based view.
+# - Key paths include:
+#   - `'home/'`: Maps to the `home` view, rendering the homepage.
+#   - `'logout/'`: Uses Django's built-in `LogoutView` to log the user out, redirecting them to the login page.
+#   - `'login/'`: Maps to the custom `LoginPage` view for user login.
+#   - `'register/'`: Maps to the `register` view for user registration.
+#   - `'Feedback/'`: Maps to the `feedback` view for users to submit feedback.
+#   - Experiment URLs (`'Experiment1/'` through `'Experiment6/'`) are mapped to corresponding views.
+#   - Password reset functionality is provided by Django's built-in authentication views (e.g., `PasswordResetView`).
+# 
+# The URLs handle multiple features like authentication, experiment pages, feedback submission, and password reset functionality.
 from django.urls import path
 from . import views 
 from django.contrib.auth.views import LogoutView

@@ -1,3 +1,13 @@
+# This file defines two Django form classes: `Signup` and `Feedback`.
+# 
+# - `Signup`: Inherits from `UserCreationForm` and is used to handle user registration. 
+#   It specifies the `User` model and includes fields for username, email, password, 
+#   and password confirmation, with custom placeholders for each field.
+# 
+# - `Feedback`: Inherits from `ModelForm` and is used to collect feedback from users 
+#   about a course. It is tied to the `FeedbackForm` model and includes fields for 
+#   course name, semester, rating, and suggestions. The `save` method is overridden 
+#   to associate the feedback with a specific user before saving the instance.
 from django import forms
 from django.forms import ModelForm  
 from django.contrib.auth.forms import UserCreationForm

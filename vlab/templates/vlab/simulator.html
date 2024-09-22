@@ -2,7 +2,6 @@
 
 <p class='tut'>Tutorial for using the <a href="{% url 'Experiment1'%}">Simulator </a></p>
 <div class="container">
-    <div class="simulator">
 
         <iframe
         allowtransparency="true"
@@ -15,20 +14,22 @@
         scrolling="no"
         id="game_drop"
         allowfullscreen="true"
-        height="720"
+        height="640"
         width="1280"
         ></iframe>
-    </div>
+    
 
 </div>
 
 <style>
     .container{
+        
         background-color: whitesmoke;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 10px;
+        margin-left: 100px;
+        margin-bottom: 10px;
     }
     .tut{
         text-align: center;
@@ -38,7 +39,7 @@
 
 </style>
 
-{% include 'vlab/footer.html' %}
+<!-- {% include 'vlab/footer.html' %} -->
 
 
 <script>

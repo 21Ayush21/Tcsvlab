@@ -1,3 +1,15 @@
+# This file defines two Django models: `UserProfile` and `FeedbackForm`.
+# 
+# - `UserProfile`: Represents additional user information beyond the built-in `User` model. 
+#   It includes an `email` field, which is unique, and a `password` field with a max length of 120 characters.
+#   The `__str__` method returns the email of the user profile.
+# 
+# - `FeedbackForm`: Stores feedback data related to a course. It includes:
+#   - A foreign key relationship to the `User` model.
+#   - Fields for `course_name`, `semester` (with choices for 1st through 8th semesters), 
+#     `rating` (with choices such as Excellent, Good, Average, and Poor), and an optional 
+#     `suggestions` field for additional comments.
+#   The `__str__` method returns a string with the username, course name, and semester.
 from django.db import models
 from django.contrib.auth.models import User
 

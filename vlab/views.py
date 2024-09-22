@@ -1,3 +1,22 @@
+# This file defines the views for the Django application, handling requests and rendering templates.
+#
+# - `home`, `Theory`, `Simulator`, `Examples`, and individual experiment views (experiment1 - experiment6):
+#   These views render their corresponding HTML templates and are restricted to authenticated users using 
+#   the `@login_required` decorator.
+#
+# - `register`: Handles user registration by rendering a signup form and processing form submissions. 
+#   It checks for existing usernames and displays appropriate messages using Django's messaging framework.
+#
+# - `LoginPage`: Handles user login. It authenticates the user and redirects to the 'Simulator' page if successful, 
+#   otherwise it displays an error message. The `@unauthenticated_user` decorator ensures only unauthenticated users can access it.
+#
+# - `feedback`: Handles the feedback form submission. It renders the form and, upon submission, associates 
+#   the feedback with the logged-in user before saving it.
+#
+# - `feedback_submit`: Renders a confirmation page once feedback is successfully submitted.
+#
+# Most views use the `@login_required` decorator to ensure only authenticated users can access certain pages, 
+# with a redirect to the login page for unauthenticated users.
 from django.shortcuts import render , redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView
